@@ -1,1 +1,2 @@
-# demesne-real-estate
+# deMeSne:
+a real estate platform
