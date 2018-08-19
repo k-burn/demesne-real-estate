@@ -6,7 +6,6 @@
           <th>Price</th>
           <th>Square Footage</th>
           <th>City</th>
-          <th>Type</th>
           <th>Image</th>
           <th></th>
         </tr>
@@ -16,7 +15,6 @@
           <td>{{listing.cost}}</td>
           <td>{{listing.sqft}}</td>
           <td>{{listing.city}}</td>
-          <td>{{listing.type}}</td>
           <td><img ng-src="images/{{listing.image_path}}" alt="image of property"></td>
           <td><button ng-click= "avc.deleteListing(listing)">Remove</button></td>
         </tr>

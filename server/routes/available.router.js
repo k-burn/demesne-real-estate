@@ -22,7 +22,7 @@ pool.on('error', () => {
 router.get('/', (req, res) => {
     console.log('in GET');
     
-    const query = 'SELECT * FROM "listings";';
+    const query = 'SELECT * FROM "listings" WHERE "type" ILIKE \'sale\';';
     pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);
