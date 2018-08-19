@@ -9,6 +9,10 @@ myApp.controller('AddController', function ($http) {
             data: listingToAdd
         }).then(function(response){
             console.log('In POST response of addListing', response.data);
+            vm.listingToAdd.cost='';
+            vm.listingToAdd.sqft='';
+            vm.listingToAdd.city='';
+            vm.listingToAdd.type='';
         }).catch(function(error){
             console.log('Error in POST', error);
         });  
