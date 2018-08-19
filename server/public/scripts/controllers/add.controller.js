@@ -13,9 +13,9 @@ myApp.controller('AddController', function ($http) {
             vm.listingToAdd.sqft='';
             vm.listingToAdd.city='';
             vm.listingToAdd.type='';
+            vm.listingToAdd.image_path='';
         }).catch(function(error){
             console.log('Error in POST', error);
         });  
     }
-
 })
