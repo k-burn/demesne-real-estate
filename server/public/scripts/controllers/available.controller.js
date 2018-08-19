@@ -18,14 +18,15 @@ myApp.controller('AvailableController', function ($http) {
     }
     
 
-    vm.deletelisting = function(listing) {
-        console.log(listing);
+    vm.deleteListing = function(listingToDelete) {
+        console.log('in deleteListing', listingToDelete);
         $http({
             method: 'DELETE',
-            url: '/available/' + listing.id
+            url: '/available/' + listingToDelete.user_id
         }).then(function(response) {
+            console.log('in deleteListing');
             console.log(response);
-            getRentals();
+            getListings();
             alert('listing removed');
         }).catch(function(error){
             console.log('Error deleting request:', error);

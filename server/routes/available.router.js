@@ -32,10 +32,10 @@ router.get('/', (req, res) => {
     });//End GET
 });
 
-router.delete('/:id', (req, res) => { 
-    const idToDelete = req.params.id;
+router.delete('/:user_id', (req, res) => { 
+    const idToDelete = req.params.user_id;
     console.log('deleting ', idToDelete);
-    const query = 'DELETE FROM "listings" WHERE "id" = $1;';
+    const query = 'DELETE FROM "listings" WHERE "user_id" = $1;';
     pool.query(query, [idToDelete]).then((result) => {
         res.sendStatus(200);
     }).catch( (error) => {

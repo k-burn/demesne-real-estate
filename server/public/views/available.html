@@ -18,7 +18,7 @@
         <td>{{listing.city}}</td>
         <td>{{listing.type}}</td>
         <td><img ng-src="images/{{listing.image_path}}" alt="image of property"></td>
-        <td><button>Remove</button></td>
+        <td><button ng-click= "avc.deleteListing(listing)">Remove</button></td>
       </tr>
     </tbody>
   </table>
