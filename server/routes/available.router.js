@@ -44,16 +44,6 @@ router.delete('/:user_id', (req, res) => {
     });//End DELETE
 });
 
-router.post('/', (req, res) => {
-    const listingToAdd = req.body;
-    const query = 'INSERT INTO "listings" ("name", "type") VALUES($1, $2)'
-    pool.query(query, [listingToAdd.name, listingToAdd.type]).then(() => {
-        res.sendStatus(201);
-    }).catch((error) => {
-        res.sendStatus(500);
-    });//End POST
-    
-});
 
 
 module.exports = router;

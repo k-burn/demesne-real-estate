@@ -22,7 +22,7 @@ pool.on('error', () => {
 router.get('/', (req, res) => {
     console.log('in GET');
     
-    const query = 'SELECT * FROM "listings";';
+    const query = 'SELECT * FROM "listings" WHERE "type" ILIKE \'rent\';';
     pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);
@@ -44,16 +44,6 @@ router.delete('/:user_id', (req, res) => {
     });//End DELETE
 });
 
-router.post('/', (req, res) => {
-    const listingToAdd = req.body;
-    const query = 'INSERT INTO "listings" ("name", "type") VALUES($1, $2)'
-    pool.query(query, [listingToAdd.name, listingToAdd.type]).then(() => {
-        res.sendStatus(201);
-    }).catch((error) => {
-        res.sendStatus(500);
-    });//End POST
-    
-});
 
 
 module.exports = router;

@@ -12,8 +12,12 @@ myApp.config( function ( $routeProvider){
      })// end addListing
      .when( '/available', {
          templateUrl: '/views/available.html',
-         controller: 'AvailableController as vc'
+         controller: 'AvailableController as avc'
      }) //end available
+     .when( '/availableRentals', {
+        templateUrl: '/views/availableRentals.html',
+        controller: 'RentalController as rc'
+    }) //end available
      .otherwise({
          templateUrl: '/views/404.html'
      }) // end
