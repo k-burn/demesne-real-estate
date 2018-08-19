@@ -1,0 +1,25 @@
+<div ng-controller="AvailableController as avc">
+  <h1>Listings Display</h1>
+  <table class="table">
+    <thead id="listings">
+      <tr>
+        <th>Price</th>
+        <th>Square Footage</th>
+        <th>City</th>
+        <th>Type</th>
+        <th>Image</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="listing in avc.listingList ">
+        <td>{{listing.cost}}</td>
+        <td>{{listing.sqft}}</td>
+        <td>{{listing.city}}</td>
+        <td>{{listing.type}}</td>
+        <td><img ng-src="images/{{listing.image_path}}" alt="image of property"></td>
+        <td><button>Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

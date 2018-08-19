@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>deMeSne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+    <script src="vendors/angular.min.js"></script>
+    <script src="vendors/angular-route.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/available.controller.js"></script>
+    <script src="scripts/controllers/add.controller.js"></script>
+</head>
+<body ng-app="myApp">
+    <h1>deMeSne</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse"></div>
+            <a class="btn btn-info" href="#!/addListing" role="button">Add Listing</a>
+            <a class="btn btn-info" href="#!/available" role="button">Available</a>
+        </div>
+    </nav>
+
+    <ng-view></ng-view>
+</body>
+</html>
