@@ -1,7 +1,16 @@
 <div ng-controller="RentalController as rc">
     <h2 class="view-title">Available Rental Properties</h2>
+    <div class="wrapper">
+      <label for="orderBy">Filter by: </label>
+      <select id="orderBy" ng-model="sortBy">
+        <option value="price">Price-- low to high</option>
+        <option value="sqft">Sqft-- low to high</option>
+      </select>
+    </div>
+    <br>
+    <br>
     <div >
-      <div ng-repeat="listing in rc.rentalListingList " class="card d-inline-block" style="width: 18rem;">
+      <div ng-repeat="listing in rc.rentalListingList | orderBy : sortBy" class="card d-inline-block" style="width: 18rem;">
         <img class="card-img-top" ng-src="images/{{listing.image_path}}" alt="image of property listing" style="height: 10rem">
         <div class="card-body">
           <h4 class="card-title">{{listing.cost | currency}} <span style= "font-size:small;">per month</span></h4>
