@@ -1,13 +1,19 @@
 <div ng-controller="AddController as ac">
+    <h2>Add a Listing</h2>
     <form ng-submit= "ac.addListing(ac.listingToAdd)">
-        Cost<input type="number" ng-model="ac.listingToAdd.cost" placeholder="e.g. 500000">
-        Square Footage<input type="number" ng-model="ac.listingToAdd.sqft" placeholder="e.g. 1500">
-        City<input type="text" ng-model="ac.listingToAdd.city" placeholder="e.g. Minneapolis">
-        <select ng-model="ac.listingToAdd.type">
+        <label for="type">Select Type of Property:</label>
+        <select id="type" ng-model="ac.listingToAdd.type" name="Type of Property">
             <option value="rent">Available Rental</option>
             <option value="sale">For Sale</option>
         </select>
-        <select ng-model="ac.listingToAdd.image_path">
+        <label for ="cost"> Cost of Property:</label>
+        <input type="number" ng-model="ac.listingToAdd.cost" placeholder="e.g. 500000">
+        <label for ="sqft"> Square Footage of Property:</label>
+        <input id="sqft" type="number" ng-model="ac.listingToAdd.sqft" placeholder="e.g. 1500">
+        <label for ="city"> Location of Property:</label>
+        <input id="city" type="text" ng-model="ac.listingToAdd.city" placeholder="e.g. Minneapolis">
+        <label for ="image"> Select an image:</label>
+        <select id="image" ng-model="ac.listingToAdd.image_path">
             <option value="classic-flats.jpg">Classic Flats</option>
             <option value="haunted.png">Haunted</option>
             <option value="older.jpg">Charmer</option>
