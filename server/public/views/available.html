@@ -1,10 +1,10 @@
 <div ng-controller="AvailableController as avc">
   <h2 class="view-title">Properties For Sale</h2>
-  <div >
+  <div id="grid">
       <div ng-repeat="listing in avc.listingList " class="card d-inline-block" style="width: 18rem;">
         <img class="card-img-top" ng-src="images/{{listing.image_path}}" alt="image of property listing" style="height: 10rem">
         <div class="card-body">
-          <h4 class="card-title">${{listing.cost}}</h4>
+          <h4 class="card-title">{{listing.cost| currency}}</h4>
           <h5> {{listing.city}} </h5>
           <p class="card-text">{{listing.sqft}} ft<sup>2</sup></p>
           <button ng-click= "avc.deleteListing(listing)" class="btn btn-danger">Remove</button>

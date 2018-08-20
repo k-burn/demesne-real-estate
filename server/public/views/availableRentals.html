@@ -4,7 +4,7 @@
       <div ng-repeat="listing in rc.rentalListingList " class="card d-inline-block" style="width: 18rem;">
         <img class="card-img-top" ng-src="images/{{listing.image_path}}" alt="image of property listing" style="height: 10rem">
         <div class="card-body">
-          <h4 class="card-title">${{listing.cost}} <span style= "font-size:small;">per month</span></h4>
+          <h4 class="card-title">{{listing.cost | currency}} <span style= "font-size:small;">per month</span></h4>
           <h5> {{listing.city}} </h5>
           <p class="card-text">{{listing.sqft}} ft<sup>2</sup></p>
           <button ng-click= "rc.deleteListing(listing)" class="btn btn-danger">Remove</button>
