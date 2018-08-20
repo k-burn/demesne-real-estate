@@ -1,16 +1,16 @@
 <div ng-controller="AvailableController as avc">
   <h2 class="view-title">Properties For Sale</h2>
   <div class="wrapper">
-    <label for="filterBy">Filter by: </label>
-    <select id="filterBy" ng-model="ac.listingToAdd.image_path">
+    <label for="orderBy">Filter by: </label>
+    <select id="orderBy" ng-model="sortBy">
       <option value="">Price-- low to high</option>
-      <option value="">Sqft-- low to high</option>
+      <option value="sqft">Sqft-- low to high</option>
     </select>
   </div>
   <br>
   <br>
   <div id="grid">
-      <div ng-repeat="listing in avc.listingList " class="card d-inline-block" style="width: 18rem;">
+      <div ng-repeat="listing in avc.listingList | orderBy: sortBy" class="card d-inline-block" style="width: 18rem;">
         <img class="card-img-top" ng-src="images/{{listing.image_path}}" alt="image of property listing" style="height: 10rem">
         <div class="card-body">
           <h4 class="card-title">{{listing.cost| currency}}</h4>
