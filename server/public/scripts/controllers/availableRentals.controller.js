@@ -26,7 +26,7 @@ myApp.controller('RentalController', function ($http) {
         }).then(function(response) {
             console.log('in deleteListing');
             console.log(response);
-            getListings();
+            getRentalListings();
             alert('listing removed');
         }).catch(function(error){
             console.log('Error deleting request:', error);
