@@ -56,3 +56,8 @@ td{
     height: 400px;
     margin: 20px;
 } 
+.wrapper{
+    position: absolute;
+    right: 10px;
+    margin: 10px;
+}
