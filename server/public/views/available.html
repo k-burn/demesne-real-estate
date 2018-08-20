@@ -1,23 +1,14 @@
 <div ng-controller="AvailableController as avc">
-  <h1>Available Properties For Sale</h1>
-  <table class="table">
-    <thead id="listings">
-      <tr>
-        <th>Price</th>
-        <th>Square Footage</th>
-        <th>City</th>
-        <th>Image</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="listing in avc.listingList ">
-        <td>${{listing.cost}}</td>
-        <td>{{listing.sqft}}</td>
-        <td>{{listing.city}}</td>
-        <td><img ng-src="images/{{listing.image_path}}" alt="image of property"></td>
-        <td><button ng-click= "avc.deleteListing(listing)">Remove</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <h2 class="view-title">Available Properties For Sale</h2>
+  <div >
+      <div ng-repeat="listing in avc.listingList " class="card d-inline-block" style="width: 18rem;">
+        <img class="card-img-top" ng-src="images/{{listing.image_path}}" alt="image of property listing" style="height: 10rem">
+        <div class="card-body">
+          <h4 class="card-title">${{listing.cost}}</h4>
+          <h5> {{listing.city}} </h5>
+          <p class="card-text">{{listing.sqft}} ft<sup>2</sup></p>
+          <button ng-click= "avc.deleteListing(listing)" class="btn btn-danger">Remove</button>
+        </div>
+      </div>
+  </div>
 </div>

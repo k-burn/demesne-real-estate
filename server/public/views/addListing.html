@@ -1,28 +1,49 @@
 <div ng-controller="AddController as ac">
-    <h2>Add a Listing</h2>
+    <h2 class="view-title">Add a Listing</h2>
     <form ng-submit= "ac.addListing(ac.listingToAdd)">
-        <label for="type">Select Type of Property:</label>
-        <select id="type" ng-model="ac.listingToAdd.type" name="Type of Property">
-            <option value="rent">Available Rental</option>
-            <option value="sale">For Sale</option>
-        </select>
-        <label for ="cost"> Cost of Property:</label>
-        <input type="number" ng-model="ac.listingToAdd.cost" placeholder="e.g. 500000">
-        <label for ="sqft"> Square Footage of Property:</label>
-        <input id="sqft" type="number" ng-model="ac.listingToAdd.sqft" placeholder="e.g. 1500">
-        <label for ="city"> Location of Property:</label>
-        <input id="city" type="text" ng-model="ac.listingToAdd.city" placeholder="e.g. Minneapolis">
-        <label for ="image"> Select an image:</label>
-        <select id="image" ng-model="ac.listingToAdd.image_path">
-            <option value="classic-flats.jpg">Classic Flats</option>
-            <option value="haunted.png">Haunted</option>
-            <option value="older.jpg">Charmer</option>
-            <option value="rental.jpg">Gentrification!</option>
-            <option value="rental2.jpg">Basic</option>
-            <option value="shiny.jpg">Sleek</option>
-            <option value="stony.jpg">Stone Mansion</option>
-        </select>
-        <input type="submit">
+        <table>
+            <tbody>
+                <tr>
+                    <td> Select Type of Property: </td>
+                    <td>
+                        <select id="type" ng-model="ac.listingToAdd.type" name="Type of Property">
+                            <option value="rent">Available Rental</option>
+                            <option value="sale">For Sale</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Cost of Property: </td>
+                    <td>
+                        <input type="number" ng-model="ac.listingToAdd.cost" placeholder="e.g. 500000"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for ="sqft"> Square Footage of Property:</label></td>
+                    <td><input id="sqft" type="number" ng-model="ac.listingToAdd.sqft" placeholder="e.g. 1500"></td>
+                </tr>
+                <tr>
+                    <td> Location of Property: </td>
+                    <td><input id="city" type="text" ng-model="ac.listingToAdd.city" placeholder="e.g. Minneapolis"></td>
+                </tr>
+                <tr>
+                    <td> Select an image: </td>
+                    <td>
+                        <select id="image" ng-model="ac.listingToAdd.image_path">
+                            <option value="classic-flats.jpg">Classic Flats</option>
+                            <option value="haunted.png">Haunted</option>
+                            <option value="older.jpg">Charmer</option>
+                            <option value="rental.jpg">Gentrification!</option>
+                            <option value="rental2.jpg">Basic</option>
+                            <option value="shiny.jpg">Sleek</option>
+                            <option value="stony.jpg">Stone Mansion</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="submit" class="btn btn-primary">
     </form>
 
 </div>
